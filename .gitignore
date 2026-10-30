@@ -44,3 +44,6 @@ next-env.d.ts
 
 # Local demo recordings and rendered videos
 /videos/
+
+# Copied from node_modules by scripts/copy-wasm.mjs
+/public/zxing/
