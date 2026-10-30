@@ -2,7 +2,9 @@ import {
   prepareZXingModule,
   readBarcodes,
 } from "zxing-wasm/reader";
-import zxingReaderWasmUrl from "zxing-wasm/reader/zxing_reader.wasm?url";
+
+// Copied into public/ by scripts/copy-wasm.mjs before dev and build.
+const zxingReaderWasmUrl = "/zxing/zxing_reader.wasm";
 
 let ready: Promise<unknown> | undefined;
 

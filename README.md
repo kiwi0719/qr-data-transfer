@@ -56,12 +56,16 @@ full-resolution recording remains local at
 
 ## Development
 
-Requires Node.js `>=22.13.0`.
+Requires Node.js `>=18.18.0` (verified on Node 18.20.8; `.nvmrc` pins 18).
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build && npm start
 ```
+
+The app is a standard Next.js 15 project. `predev`/`prebuild` copy the ZXing
+reader WebAssembly binary into `public/zxing/`.
 
 The project does not require a Python environment. If Python tooling is added,
 use `uv` for its environment and dependencies.
@@ -80,6 +84,7 @@ The harness checks:
 - the actual V30-L WebAssembly renderer passed through the actual ZXing-C++
   WebAssembly scanner with exposure noise;
 - exact QR capacity for every profile;
-- production builds and server rendering for both `/` and `/scan`.
+- production builds and server rendering for both `/` and `/scan` via
+  `next start`.
 
 Run `npm run lint` and `npx tsc --noEmit` for the additional source checks.
